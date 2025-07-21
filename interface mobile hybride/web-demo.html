@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu - Web Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .demo-header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .demo-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .demo-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #4facfe;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        
+        .device-frame {
+            width: 375px;
+            height: 667px;
+            background: #333;
+            border-radius: 25px;
+            padding: 20px;
+            margin: 20px auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            color: #ff6b6b;
+            margin-top: 0;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+        
+        .compatibility-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .compatibility-table th,
+        .compatibility-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .compatibility-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .status-yes {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .status-partial {
+            color: #ffc107;
+            font-weight: 600;
+        }
+        
+        .status-no {
+            color: #dc3545;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🍴 Restaurant Menu Mobile</h1>
+            <p>Interface hybride compatible Web & Mobile Android</p>
+        </div>
+        
+        <div class="demo-info">
+            <h3>✨ Compatibilité Web Complète</h3>
+            <p>Cette application hybride fonctionne parfaitement dans les navigateurs web modernes tout en conservant toutes les fonctionnalités mobiles. Elle s'adapte automatiquement au type d'appareil (desktop, tablet, mobile).</p>
+        </div>
+        
+        <div style="text-align: center; padding: 20px;">
+            <a href="www/index.html" class="btn" target="_blank">🚀 Voir la Demo Web</a>
+            <a href="#features" class="btn">📱 Fonctionnalités</a>
+        </div>
+        
+        <div class="device-frame">
+            <iframe src="www/index.html" class="device-screen"></iframe>
+        </div>
+        
+        <div id="features" class="features-grid">
+            <div class="feature-card">
+                <h3>🌐 Multi-Plateforme</h3>
+                <ul>
+                    <li><strong>Web Desktop</strong> - Navigation classique avec hover</li>
+                    <li><strong>Web Mobile</strong> - Interface tactile responsive</li>
+                    <li><strong>Android App</strong> - Application native hybride</li>
+                    <li><strong>PWA Ready</strong> - Service Worker inclus</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📱 Fonctionnalités Mobile</h3>
+                <ul>
+                    <li>Gestes tactiles (swipe, tap, long press)</li>
+                    <li>Vibration haptique (mobile/Android)</li>
+                    <li>Navigation bottom native</li>
+                    <li>Sidebar coulissante</li>
+                    <li>Animations fluides</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>💻 Adaptations Desktop</h3>
+                <ul>
+                    <li>Layout sidebar fixe sur grand écran</li>
+                    <li>Effets hover élégants</li>
+                    <li>Grid responsive étendu</li>
+                    <li>Navigation desktop optimisée</li>
+                    <li>Support clavier</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🔧 Technologies</h3>
+                <ul>
+                    <li><strong>Apache Cordova</strong> - Framework hybride</li>
+                    <li><strong>HTML5/CSS3</strong> - Interface moderne</li>
+                    <li><strong>JavaScript ES6+</strong> - Logique interactive</li>
+                    <li><strong>Service Worker</strong> - Cache offline</li>
+                    <li><strong>Media Queries</strong> - Design responsive</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="padding: 20px;">
+            <h3>📊 Tableau de Compatibilité</h3>
+            <table class="compatibility-table">
+                <thead>
+                    <tr>
+                        <th>Fonctionnalité</th>
+                        <th>Desktop</th>
+                        <th>Tablet</th>
+                        <th>Mobile Web</th>
+                        <th>Android App</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Interface responsive</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                    <tr>
+                        <td>Navigation tactile</td>
+                        <td class="status-partial">⚡ Simulé</td>
+                        <td class="status-yes">✓ Natif</td>
+                        <td class="status-yes">✓ Natif</td>
+                        <td class="status-yes">✓ Natif</td>
+                    </tr>
+                    <tr>
+                        <td>Gestes swipe</td>
+                        <td class="status-no">✗ Non</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                    <tr>
+                        <td>Vibration haptique</td>
+                        <td class="status-no">✗ Non</td>
+                        <td class="status-partial">⚡ Limité</td>
+                        <td class="status-partial">⚡ Limité</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                    <tr>
+                        <td>Panier & animations</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                    <tr>
+                        <td>Recherche instantanée</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                    <tr>
+                        <td>Service Worker PWA</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                    <tr>
+                        <td>Mode hors-ligne</td>
+                        <td class="status-partial">⚡ Cache</td>
+                        <td class="status-partial">⚡ Cache</td>
+                        <td class="status-partial">⚡ Cache</td>
+                        <td class="status-yes">✓ Complet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="text-align: center; padding: 40px 20px; background: #f8f9fa;">
+            <h3>🚀 Déploiement</h3>
+            <p><strong>Web:</strong> Hébergez le dossier <code>www/</code> sur n'importe quel serveur web</p>
+            <p><strong>Android:</strong> Buildez avec Cordova pour obtenir l'APK</p>
+            <p><strong>PWA:</strong> Installation automatique proposée sur mobile</p>
+        </div>
+    </div>
+</body>
+</html>

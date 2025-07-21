@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-menu-mobile",
+  "version": "1.0.0",
+  "description": "Application mobile hybride pour menu restaurant",
+  "main": "index.js",
+  "scripts": {
+    "build": "cordova build android",
+    "serve": "cordova serve",
+    "add-android": "cordova platform add android",
+    "run-android": "cordova run android"
+  },
+  "keywords": ["cordova", "mobile", "restaurant", "menu"],
+  "author": "Restaurant Team",
+  "license": "MIT",
+  "devDependencies": {
+    "cordova": "^11.0.0",
+    "cordova-android": "^10.1.1"
+  },
+  "cordova": {
+    "platforms": ["android"],
+    "plugins": {}
+  }
+}

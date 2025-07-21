@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline';">
+    <title>Menu Restaurant Mobile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Header Mobile -->
+        <header class="mobile-header">
+            <div class="header-content">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <h1>🍴 Restaurant Menu</h1>
+                <button class="search-btn" id="searchBtn">🔍</button>
+            </div>
+        </header>
+
+        <!-- Categories Sidebar (Mobile Drawer) -->
+        <aside class="categories-sidebar" id="categoriesSidebar">
+            <div class="sidebar-header">
+                <h2>🍴 CATÉGORIES</h2>
+                <button class="close-sidebar" id="closeSidebar">×</button>
+            </div>
+            <div class="categories-list">
+                <div class="category-item active" data-category="burger">
+                    <span class="category-icon">🍔</span>
+                    <span>Burger Royale complet</span>
+                </div>
+                <div class="category-item" data-category="salades">
+                    <span class="category-icon">🥗</span>
+                    <span>Salades Maison</span>
+                </div>
+                <div class="category-item" data-category="pizzas">
+                    <span class="category-icon">🍕</span>
+                    <span>Pizzas Italiennes</span>
+                </div>
+                <div class="category-item" data-category="poulet">
+                    <span class="category-icon">🍗</span>
+                    <span>Poulet Grillé</span>
+                </div>
+                <div class="category-item" data-category="tacos">
+                    <span class="category-icon">🌮</span>
+                    <span>Tacos Mexicains</span>
+                </div>
+                <div class="category-item" data-category="pates">
+                    <span class="category-icon">🍝</span>
+                    <span>Pâtes Fraîches</span>
+                </div>
+                <div class="category-item" data-category="sandwichs">
+                    <span class="category-icon">🥙</span>
+                    <span>Sandwichs Gourmets</span>
+                </div>
+                <div class="category-item" data-category="soupes">
+                    <span class="category-icon">🍜</span>
+                    <span>Soupes Chaudes</span>
+                </div>
+                <div class="category-item" data-category="desserts">
+                    <span class="category-icon">🍰</span>
+                    <span>Desserts Maison</span>
+                </div>
+                <div class="category-item" data-category="boissons">
+                    <span class="category-icon">🥤</span>
+                    <span>Boissons Fraîches</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay for sidebar -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Bar (Hidden by default) -->
+            <div class="search-container" id="searchContainer">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un plat...">
+                    <button class="search-close" id="searchClose">×</button>
+                </div>
+            </div>
+
+            <!-- Subcategories (Horizontal scroll) -->
+            <nav class="subcategories">
+                <h3>🍽️ SOUS-CATÉGORIES</h3>
+                <div class="subcategory-scroll">
+                    <div class="subcategory-item active">
+                        <img src="https://via.placeholder.com/60x60/FFD700/000?text=🍔" alt="Burger">
+                        <span>Burger Royale</span>
+                    </div>
+                    <div class="subcategory-item">
+                        <img src="https://via.placeholder.com/60x60/808080/FFF?text=🥗" alt="Salade">
+                        <span>Salade du Chef</span>
+                    </div>
+                    <div class="subcategory-item">
+                        <img src="https://via.placeholder.com/60x60/9ACD32/000?text=🍓" alt="Fruit">
+                        <span>Salade de fruit</span>
+                    </div>
+                    <div class="subcategory-item">
+                        <img src="https://via.placeholder.com/60x60/9ACD32/000?text=🍟" alt="Frites">
+                        <span>Pain viande + Frites</span>
+                    </div>
+                    <div class="subcategory-item">
+                        <img src="https://via.placeholder.com/60x60/FF6B6B/FFF?text=🍕" alt="Pizza">
+                        <span>Pizza Margherita</span>
+                    </div>
+                    <div class="subcategory-item">
+                        <img src="https://via.placeholder.com/60x60/FFD93D/000?text=🌮" alt="Tacos">
+                        <span>Tacos Beef</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Menu Section -->
+            <section class="menu-section">
+                <div class="menu-header">
+                    <h3>🍽️ PLATS</h3>
+                    <div class="menu-controls">
+                        <button class="btn btn-primary">📋 Formulaire</button>
+                        <button class="btn btn-secondary">⏰ Plats du jour</button>
+                    </div>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <div class="menu-item" data-name="Pizza Margherita" data-price="12.90">
+                        <img src="https://via.placeholder.com/120x120/FFD700/000?text=🍕" alt="Pizza" class="menu-image">
+                        <div class="menu-info">
+                            <h4>Pizza Margherita</h4>
+                            <p class="price">12,90 €</p>
+                            <button class="add-to-cart">Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-name="Burger Classique" data-price="9.50">
+                        <img src="https://via.placeholder.com/120x120/E74C3C/FFF?text=🍔" alt="Burger" class="menu-image">
+                        <div class="menu-info">
+                            <h4>Burger Classique</h4>
+                            <p class="price">9,50 €</p>
+                            <button class="add-to-cart">Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-name="Tacos Poulet" data-price="8.90">
+                        <img src="https://via.placeholder.com/120x120/F39C12/000?text=🌮" alt="Tacos" class="menu-image">
+                        <div class="menu-info">
+                            <h4>Tacos Poulet</h4>
+                            <p class="price">8,90 €</p>
+                            <button class="add-to-cart">Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-name="Salade César" data-price="7.50">
+                        <img src="https://via.placeholder.com/120x120/27AE60/FFF?text=🥗" alt="Salade" class="menu-image">
+                        <div class="menu-info">
+                            <h4>Salade César</h4>
+                            <p class="price">7,50 €</p>
+                            <button class="add-to-cart">Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-name="Poulet Rôti" data-price="11.90">
+                        <img src="https://via.placeholder.com/120x120/D68910/FFF?text=🍗" alt="Poulet" class="menu-image">
+                        <div class="menu-info">
+                            <h4>Poulet Rôti</h4>
+                            <p class="price">11,90 €</p>
+                            <button class="add-to-cart">Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-name="Spaghetti Bolognaise" data-price="10.50">
+                        <img src="https://via.placeholder.com/120x120/2ECC71/FFF?text=🍝" alt="Pates" class="menu-image">
+                        <div class="menu-info">
+                            <h4>Spaghetti Bolognaise</h4>
+                            <p class="price">10,50 €</p>
+                            <button class="add-to-cart">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Accueil</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">🍽️</span>
+                <span class="nav-label">Menu</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-label">Panier</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profil</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Cart Floating Button -->
+    <div class="cart-floating" id="cartFloating">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-total" id="cartTotal">0,00 €</span>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="cordova.js"></script>
+</body>
+</html>
