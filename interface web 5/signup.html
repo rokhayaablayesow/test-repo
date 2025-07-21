@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Discover The Unknown</h1>
+                <p>Curated guides by experts.</p>
+            </div>
+        </div>
+        <div class="form-section">
+            <h2>Create Account</h2>
+            <p>Start your 7 day free trial.</p>
+            <div class="success-message" id="successMessage">
+                Account created successfully! Welcome aboard.
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <input type="text" name="first_name" class="form-control" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Create password" required>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <p class="login-link">Already a member? <a href="#" onclick="showLogin()">Log in</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.querySelector('input[name="first_name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            
+            if (firstName && email && password) {
+                // Simulate successful signup
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('signupForm').style.display = 'none';
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                    document.getElementById('signupForm').style.display = 'block';
+                    document.getElementById('signupForm').reset();
+                }, 3000);
+            }
+        });
+
+        function showLogin() {
+            alert('Login page would be displayed here in a real application');
+        }
+    </script>
+</body>
+</html>

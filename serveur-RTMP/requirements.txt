@@ -1,0 +1,15 @@
+# Core dependencies for RTMP server
+# No external dependencies required - uses only Python standard library
+
+# Optional dependencies for enhanced functionality:
+# numpy>=1.21.0          # For advanced video processing
+# opencv-python>=4.5.0   # For video manipulation and encoding
+# ffmpeg-python>=0.2.0   # For FFmpeg integration
+# Pillow>=8.0.0          # For image processing
+# asyncio>=3.7.0         # For async I/O operations (built-in Python 3.7+)
+
+# Development dependencies:
+# pytest>=6.0.0          # For testing
+# black>=21.0.0          # For code formatting  
+# flake8>=3.8.0          # For linting
+# mypy>=0.812            # For type checking

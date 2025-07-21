@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #34495e, #1a252f);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.categories-sidebar {
+    width: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.categories-sidebar h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.category-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.category-item.active {
+    background: #e74c3c;
+}
+
+.category-item:nth-child(even):not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.category-item .category-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.category-item span:last-child {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.subcategories {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 100%;
+}
+
+.subcategories h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ecf0f1;
+}
+
+.subcategory-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+}
+
+.subcategory-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.subcategory-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.subcategory-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.subcategory-item {
+    min-width: 250px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.subcategory-item:first-child {
+    background: #27ae60;
+}
+
+.subcategory-item:nth-child(2) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.subcategory-item:nth-child(3) {
+    background: #27ae60;
+}
+
+.subcategory-item:nth-child(4) {
+    background: #27ae60;
+}
+
+.subcategory-item span {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+.subcategory-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-section {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 140px);
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-header h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.menu-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn.formulaire {
+    background: #8e44ad;
+    color: white;
+}
+
+.btn.plats-jour {
+    background: #f39c12;
+    color: white;
+}
+
+.btn.rechercher {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn.add {
+    background: #27ae60;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.menu-item {
+    background: #f39c12;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 80px;
+}
+
+.menu-item:nth-child(2n) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item .menu-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.menu-item .menu-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+.menu-item .menu-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .categories-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-controls {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .btn.rechercher {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subcategory-item {
+        min-width: 150px;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .menu-item .menu-icon {
+        margin: 0 0 10px 0;
+    }
+    
+    .menu-item .menu-name {
+        margin-bottom: 10px;
+    }
+}
